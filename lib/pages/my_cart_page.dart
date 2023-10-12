@@ -117,19 +117,19 @@ class _MyCartPageState extends State<MyCartPage> {
                                           myCartJson[index]['image']),
                                       fit: BoxFit.cover)),
                             ),
-                            // Positioned(
-                            //   top: 10,
-                            //   child: Container(
-                            //     width: 60,
-                            //     height: 60,
-                            //     decoration: BoxDecoration(
-                            //       borderRadius: BorderRadius.circular(5),
-                            //       border: Border.all(
-                            //           color: secondary.withOpacity(0.2)),
-                            //       color: secondary.withOpacity(0.1),
-                            //     ),
-                            //   ),
-                            // ),
+                            Positioned(
+                              top: 10,
+                              child: Container(
+                                width: 60,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  border: Border.all(
+                                      color: secondary.withOpacity(0.2)),
+                                  color: secondary.withOpacity(0.1),
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -137,6 +137,33 @@ class _MyCartPageState extends State<MyCartPage> {
                     ],
                   ),
                 ),
+                const SizedBox(width: 10),
+                Flexible(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(myCartJson[index]['name'],
+                          style: const TextStyle(fontSize: 16), maxLines: 2),
+                      Row(
+                        children: [
+                          const Text(
+                            "\$",
+                            style: TextStyle(
+                                color: red,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          Text(
+                            myCartJson[index]['price'],
+                            style: const TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           ),
