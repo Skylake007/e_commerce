@@ -1,4 +1,4 @@
-const List favouriteJson = [
+const List favoriteJson = [
   {
     "image": "assets/images/shoes_1_.png",
     "rate": "4.2",
